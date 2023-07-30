@@ -9,7 +9,7 @@ export class NoteController {
 
   @Get()
   getAllNotes() {
-    return [{dima: "dima"},{fuck: "fuck"}];
+    return this.noteService.getAllNotes();
   }
 
   @Get(':id')

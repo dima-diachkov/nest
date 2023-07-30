@@ -2,10 +2,11 @@ import { Injectable, BadRequestException } from '@nestjs/common';
 import { Note } from './app.interface';
 import { CreateNoteDto, UpdateNoteDto } from './app.dto';
 import { validate } from 'class-validator';
+import { mockNotes } from './mockData';
 
 @Injectable()
 export class NoteService {
-  private notes: Note[] = [];
+  private notes: Note[] = [...mockNotes];
 
   getAllNotes(): Note[] {
     return this.notes;
